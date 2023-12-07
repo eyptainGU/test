@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <input type="text" name="id2" id="id2">
+    <button id="btn" onclick="x()">check</button>
+    <p id="id"></p>
+    <script>
+
+        function x(){
+            const msg = document.getElementById("id");
+            msg.innerHTML=" ";
+            let value = document.getElementById("id2").value;
+            try{
+                if(value=="")
+                throw "empty";
+            else if (isNaN(value)){
+            throw "not a number";
+                value = Number(value);
+            }
+            else if(value<5)
+            throw "low";
+            else if(value >5)
+            throw "high";
+            }
+            catch(err){
+                msg.innerHTML = "the input is " + err; 
+            }
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
